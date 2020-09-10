@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+logging:
+  level:
+    com.netflix.discovery: 'DEBUG'
+    org.springframework.cloud: 'DEBUG'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sbarbat/cloudshop-settings

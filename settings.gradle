@@ -1,0 +1,4 @@
+rootProject.name = 'cloudshop'
+
+include 'config-service'
+include 'discovery-service'

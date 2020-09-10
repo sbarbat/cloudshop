@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+allprojects {
+    group = 'org.cloudshop'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    ext {
+        set('springBootVersion', "2.3.3.RELEASE")
+        set('springCloudVersion', "2.2.5.RELEASE")
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+//        runtime("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
+
+        testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
