@@ -1,11 +1,16 @@
 server:
-  port: 8761
+  port: 10001
 
 spring:
   application:
-    name: discovery-service
+    name: user-service
   profiles:
     active: local,dev
   cloud:
     config:
       uri: ${CONFIG_SERVICE_URL:http://localhost:8888}
+
+logging:
+  level:
+    org.cloudshop: 'DEBUG'
+    org.springframework.security: 'DEBUG'

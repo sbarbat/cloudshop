@@ -1,0 +1,17 @@
+dependencies {
+	implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+	implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+	implementation "org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}"
+	implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}"
+	implementation "org.springframework.cloud:spring-cloud-starter-openfeign:${springCloudVersion}"
+
+	testImplementation "org.springframework.security:spring-security-test:5.3.4.RELEASE"
+
+	implementation 'org.projectlombok:lombok:1.18.12'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+	compile 'io.jsonwebtoken:jjwt-api:0.11.2'
+	runtime 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtime 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+}

@@ -1,9 +1,9 @@
 server:
-  port: 8761
+  port: 9001
 
 spring:
   application:
-    name: discovery-service
+    name: gateway
   profiles:
     active: local,dev
   cloud:
